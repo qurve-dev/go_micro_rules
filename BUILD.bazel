@@ -1,0 +1,13 @@
+load("@rules_proto_grpc//:defs.bzl", "proto_plugin")
+
+proto_plugin(
+    name = "go_micro_plugin",
+    exclusions = [
+        "google/api",
+        "google/protobuf",
+    ],
+    options = ["paths=source_relative"],
+    outputs = ["{protopath}.pb.micro.go"],
+    tool = "@dev_go_micro_v4//cmd/protoc-gen-micro",
+    visibility = ["//visibility:public"],
+)
