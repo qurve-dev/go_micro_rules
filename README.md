@@ -37,6 +37,9 @@ rules_proto_grpc_repos()
 load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
 rules_proto_dependencies()
 rules_proto_toolchains()
+
+load("@rules_go_micro//:repositories.bzl", "go_micro_repositories")
+go_micro_repositories()
 ```
 
 ## How to use
